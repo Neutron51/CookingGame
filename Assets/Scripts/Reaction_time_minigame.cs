@@ -34,12 +34,6 @@ public class Reaction_time_minigame : MonoBehaviour
         {
             targetPosition = pointA.position;
         }
-
-        //Add pressing mechanic
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CheckSuccess();
-        }
     }
 
     public void CheckSuccess()
