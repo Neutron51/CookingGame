@@ -1,58 +1,73 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PainaMinipeli : MonoBehaviour
 {
-    public float clickSpeed = 100f;
-    public RectTransform safeZone;
+    public float tapDistance = 10f;
     public Transform pointA;
     public Transform pointB;
-    public Transform pointC;
-    public float moveSpeed = 100f;
+    public float moveSpeed = 10f;
 
-    private RectTransform safeZoneFill;
-    private Vector3 targetPosition;
+    public Slider slider;
+
     private bool hasSucceeded = false;
+    private bool hasFailed = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        safeZoneFill = GetComponent<RectTransform>();
-        targetPosition = pointB.position;
+        slider.minValue = 0f;
+        slider.maxValue = 100f;
+        slider.value = 20f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (hasSucceeded)
+        if (hasSucceeded == true)
+        {
             return;
-
-        safeZoneFill.position = Vector3.MoveTowards(safeZoneFill.position, targetPosition, moveSpeed * Time.deltaTime);
-
-        if (Vector3.Distance(safeZoneFill.position, pointA.position) < 0.1f)
-        {
-            targetPosition = pointC.position;
         }
-        else if (Vector3.Distance(safeZoneFill.position, pointB.position) < 0.1f)
+
+        if (hasFailed == true)
         {
-            targetPosition = pointA.position;
+            return;
+        }
+
+        slider.value -= moveSpeed * Time.deltaTime;
+
+        if (slider.value <= 0f)
+        {
+            slider.value = 0f;
+            hasFailed = true;
+            Debug.Log("You Lose!");
+        }
+
+        if (slider.value >= 100f)
+        {
+            slider.value = 100f;
+            hasSucceeded = true;
+            Debug.Log("You Win!");
         }
     }
 
-    public void CheckSuccess()
+    public void ButtonTap()
     {
-        if (hasSucceeded)
+        if (hasSucceeded == true)
+        {
             return;
-
-        if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, safeZoneFill.position, null))
-        {
-            Debug.Log("Success!");
-            hasSucceeded = true;
         }
-        else
+
+        if (hasFailed == true)
         {
-            Debug.Log("Fail!");
+            return;
+        }
+
+        slider.value += tapDistance;
+
+        if (slider.value >= 100f)
+        {
+            slider.value = 100f;
+            hasSucceeded = true;
+            Debug.Log("You Win!");
         }
     }
 }
-
