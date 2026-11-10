@@ -853,6 +853,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReactionTimeMinigame
       objectReference: {fileID: 0}
+    - target: {fileID: 2087018735655972648, guid: e335dcf2d9b5ec742a68100681b7290c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5319360285696509003, guid: e335dcf2d9b5ec742a68100681b7290c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
