@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class PainaMinipeli : MonoBehaviour
 {
     public float tapDistance = 10f;
-    public Transform pointA;
-    public Transform pointB;
     public float moveSpeed = 10f;
 
     public Slider slider;

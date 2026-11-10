@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class Odotaminipeli : MonoBehaviour
 {
     public float tapDistance = 10f;
-    public Transform pointA;
-    public Transform pointB;
     public float moveSpeed = 10f;
 
     public Slider slider;
@@ -47,6 +45,8 @@ public class Odotaminipeli : MonoBehaviour
             hasSucceeded = true;
             Debug.Log("You Win!");
         }
+
+
     }
     public void ButtonTap()
     {
@@ -59,7 +59,5 @@ public class Odotaminipeli : MonoBehaviour
         {
             return;
         }
-        
-
     }
 }
