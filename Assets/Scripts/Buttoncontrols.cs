@@ -32,4 +32,11 @@ public class Buttoncontrols : MonoBehaviour
         GameObject recipeStep = gameObject.transform.parent.gameObject;
         recipeStep.SetActive(false);
     }
+    public void FinishRecipeStep2()
+    {
+        gameManager.NextStep();
+        Debug.Log("Initiate next step in recipe");
+        GameObject recipeStep = gameObject.transform.parent.transform.parent.gameObject;
+        recipeStep.SetActive(false);
+    }
 }

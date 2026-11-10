@@ -52,4 +52,9 @@ public class Gamemanager : MonoBehaviour
             RecipeSteps[currentStep].SetActive(true);
         }
     }
+    public void FinishRecipeStep()
+    {
+        RecipeSteps[0].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe");
+    }
 }
