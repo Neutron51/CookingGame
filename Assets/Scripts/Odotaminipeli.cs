@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class Odotaminipeli : MonoBehaviour
@@ -32,15 +31,6 @@ public class Odotaminipeli : MonoBehaviour
         }
 
         slider.value += moveSpeed * Time.deltaTime;
-
-        /*if(slider.value <= 100f)
-        {
-            slider.value = 100f;
-            hasFailed = true;
-            hasStopped = true;
-
-            Debug.Log("You Lose! Too Late!");
-        }*/
     }
     public void ButtonTap()
     {
