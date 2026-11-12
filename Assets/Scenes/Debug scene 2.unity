@@ -563,6 +563,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &149846296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149846297}
+  m_Layer: 5
+  m_Name: Recipe screen holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &149846297
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149846296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 592737248}
+  m_Father: {fileID: 1713607466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &167119820
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +646,7 @@ GameObject:
   - component: {fileID: 298685899}
   - component: {fileID: 298685898}
   m_Layer: 5
-  m_Name: Peel potatoes button
+  m_Name: Wash potato button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,6 +685,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttoncontrols
   gameManager: {fileID: 1539841518}
+  RecipeTextBox: {fileID: 0}
+  startScreen: {fileID: 0}
+  recipeScreen: {fileID: 0}
+  RecipeText: {fileID: 0}
 --- !u!114 &298685899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,7 +735,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 298685898}
         m_TargetAssemblyTypeName: Buttoncontrols, Assembly-CSharp
-        m_MethodName: FinishRecipeStep2
+        m_MethodName: FinishRecipeStep4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1027,6 +1067,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttoncontrols
   gameManager: {fileID: 1539841518}
+  RecipeTextBox: {fileID: 946351683}
+  startScreen: {fileID: 1882007604}
+  recipeScreen: {fileID: 149846296}
+  RecipeText: {fileID: 946351685}
 --- !u!1 &541143759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,19 +1188,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592737247}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 946351684}
   - {fileID: 1562574345}
-  m_Father: {fileID: 1713607466}
+  m_Father: {fileID: 149846297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 3740, y: 2060}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592737249
 MonoBehaviour:
@@ -1266,7 +1310,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717570236
 MonoBehaviour:
@@ -1314,7 +1358,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 717570239}
         m_TargetAssemblyTypeName: Buttoncontrols, Assembly-CSharp
-        m_MethodName: FinishRecipeStep
+        m_MethodName: FinishRecipeStep3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1375,6 +1419,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttoncontrols
   gameManager: {fileID: 1539841518}
+  RecipeTextBox: {fileID: 946351683}
+  startScreen: {fileID: 1882007604}
+  recipeScreen: {fileID: 149846296}
+  RecipeText: {fileID: 946351685}
 --- !u!1 &805977421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,18 +1483,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841078045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 523677267}
-  m_Father: {fileID: 1713607466}
+  m_Father: {fileID: 1882007605}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 3740, y: 2060}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841078047
 MonoBehaviour:
@@ -1829,7 +1877,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324413458
 MonoBehaviour:
@@ -1875,9 +1923,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 717570239}
+      - m_Target: {fileID: 1324413461}
         m_TargetAssemblyTypeName: Buttoncontrols, Assembly-CSharp
-        m_MethodName: FinishRecipeStep
+        m_MethodName: FinishRecipeStep2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1938,6 +1986,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttoncontrols
   gameManager: {fileID: 1539841518}
+  RecipeTextBox: {fileID: 0}
+  startScreen: {fileID: 0}
+  recipeScreen: {fileID: 0}
+  RecipeText: {fileID: 0}
 --- !u!1 &1336571944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,6 +2441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gamemanager
   InitialInstance: 0
   RecipeSteps: []
+  startScreen: {fileID: 1882007604}
+  recipeScreen: {fileID: 592737247}
   currentRecipe:
     RecipeText: 
     Recipe: 
@@ -2443,7 +2497,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542817269
 MonoBehaviour:
@@ -2489,9 +2543,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 717570239}
+      - m_Target: {fileID: 1542817272}
         m_TargetAssemblyTypeName: Buttoncontrols, Assembly-CSharp
-        m_MethodName: FinishRecipeStep
+        m_MethodName: FinishRecipeStep2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2552,6 +2606,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttoncontrols
   gameManager: {fileID: 1539841518}
+  RecipeTextBox: {fileID: 0}
+  startScreen: {fileID: 0}
+  recipeScreen: {fileID: 0}
+  RecipeText: {fileID: 0}
 --- !u!1 &1558633176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,6 +2800,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttoncontrols
   gameManager: {fileID: 1539841518}
+  RecipeTextBox: {fileID: 0}
+  startScreen: {fileID: 0}
+  recipeScreen: {fileID: 149846296}
+  RecipeText: {fileID: 0}
 --- !u!114 &1562574347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2969,8 +3031,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 592737248}
-  - {fileID: 841078046}
+  - {fileID: 149846297}
+  - {fileID: 1882007605}
   m_Father: {fileID: 1336571945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3270,6 +3332,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851249212}
   m_CullTransparentMesh: 1
+--- !u!1 &1882007604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882007605}
+  m_Layer: 5
+  m_Name: Start screen holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1882007605
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882007604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 841078046}
+  m_Father: {fileID: 1713607466}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2052377853
 GameObject:
   m_ObjectHideFlags: 0

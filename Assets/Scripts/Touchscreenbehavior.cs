@@ -9,12 +9,17 @@ public class Touchscreenbehavior : MonoBehaviour,
     [SerializeField] private float goalRotation;
     [SerializeField] private float currentRotations;
     private Vector2 lastDirection;
+    private bool goalReached = false;
     private void Update()
     {
-        if (currentRotations >= goalRotation)
+        if (currentRotations >= goalRotation && !goalReached )
         {
             gamemanager.FinishRecipeStep();
+            goalReached = true;
             Debug.Log("Goal reached, minigame finished");
+            currentRotations = 0;
+            goalReached = false;
+            Debug.Log("Goal rotation reset");
         }
     }
     public void OnBeginDrag(PointerEventData eventData)

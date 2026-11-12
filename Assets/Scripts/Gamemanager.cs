@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
@@ -12,6 +13,8 @@ public class Gamemanager : MonoBehaviour
     }
     [SerializeField] private bool InitialInstance = false;
     [SerializeField] List<GameObject> RecipeSteps = new List<GameObject>();
+    [SerializeField] private GameObject startScreen;
+    [SerializeField] private GameObject recipeScreen;
     [SerializeField] private Recipes currentRecipe;
     [SerializeField] private int currentStep;
     public string currentRecipeText;
@@ -56,5 +59,13 @@ public class Gamemanager : MonoBehaviour
     {
         RecipeSteps[0].transform.GetChild(1).gameObject.SetActive(true);
         Debug.Log("Initiate next step in recipe");
+    }
+    public void GameLoops()
+    {
+        startScreen.SetActive(true);
+        recipeScreen.SetActive(true);
+        InitialInstance = false;
+        currentRecipe = null;
+        currentRecipeText = null;
     }
 }
