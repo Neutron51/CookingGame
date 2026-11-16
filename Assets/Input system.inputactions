@@ -1,0 +1,119 @@
+{
+    "version": 1,
+    "name": "Input system",
+    "maps": [
+        {
+            "name": "ReationTime",
+            "id": "b7f680cc-d215-45cc-a9d7-08b46f597c8c",
+            "actions": [
+                {
+                    "name": "TapOn",
+                    "type": "Button",
+                    "id": "9b1fd201-acf8-488f-951b-d431b091c88d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9634971a-e3cd-4863-9c0c-6aa948ec7492",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TapOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Dragging",
+            "id": "687b2c36-dd06-4f3e-92b7-83d15bbbad4d",
+            "actions": [
+                {
+                    "name": "Hold",
+                    "type": "Button",
+                    "id": "97b363ad-9d64-4e2a-aed4-b2388884f630",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "46e7ef86-c9eb-4c84-8669-09db822e86a2",
+                    "path": "<Touchscreen>/primaryTouch/press",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TouchScreen",
+            "id": "d167eb1d-7f66-4d35-b18d-e8de5e89ad1d",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "48640dd2-852d-4f60-bbad-46d5acef63d1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "568eff9b-b064-46d8-9795-c17568c42663",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "7f7fbfdf-28b1-4823-a451-3706a03e3353",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "f02ff8fb-7da1-452a-a952-a98912f6a076",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "47b3e9dd-7924-4770-93e1-0871d0c1ae96",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
