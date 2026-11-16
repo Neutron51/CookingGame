@@ -14,7 +14,7 @@ public class Touchscreenbehavior : MonoBehaviour,
     {
         if (currentRotations >= goalRotation && !goalReached )
         {
-            gamemanager.FinishRecipeStep();
+            gamemanager.FinishRecipeStep1();
             goalReached = true;
             Debug.Log("Goal reached, minigame finished");
             currentRotations = 0;

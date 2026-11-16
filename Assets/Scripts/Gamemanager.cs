@@ -36,7 +36,7 @@ public class Gamemanager : MonoBehaviour
         Debug.Log("Start");
         if (!InitialInstance)
         {
-            Debug.Log("Prepare recipe pro 1");
+            Debug.Log("Prepare recipe process 1");
             string RecipeName = currentRecipe.Recipe;
             GameObject RecipeProcessGameObject = GameObject.Find(RecipeName);
             foreach (Transform child in RecipeProcessGameObject.transform)
@@ -55,10 +55,25 @@ public class Gamemanager : MonoBehaviour
             RecipeSteps[currentStep].SetActive(true);
         }
     }
-    public void FinishRecipeStep()
+    public void FinishRecipeStep1()
     {
         RecipeSteps[0].transform.GetChild(1).gameObject.SetActive(true);
-        Debug.Log("Initiate next step in recipe");
+        Debug.Log("Initiate next step in recipe 1");
+    }
+    public void FinishRecipeStep2()
+    {
+        RecipeSteps[1].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe 2");
+    }
+    public void FinishRecipeStep3()
+    {
+        RecipeSteps[2].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe 3");
+    }
+    public void FinishRecipeStep4()
+    {
+        RecipeSteps[3].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe 4");
     }
     public void GameLoops()
     {
