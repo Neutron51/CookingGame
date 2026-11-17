@@ -11,6 +11,8 @@ public class Reaction_time_minigame : MonoBehaviour
     private Vector3 targetPosition;
     private bool hasSucceeded = false;
 
+    [SerializeField] private Gamemanager gameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,11 +45,13 @@ public class Reaction_time_minigame : MonoBehaviour
 
         if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, pointerTransform.position, null))
         {
+            gameManager.FinishRecipeStep4();
             Debug.Log("Success!");
             hasSucceeded = true;
         }
         else
         {
+            //gameManager.FinishRecipeStep4();
             Debug.Log("Fail!");
         }
     }

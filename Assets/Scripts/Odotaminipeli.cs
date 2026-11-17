@@ -14,6 +14,8 @@ public class Odotaminipeli : MonoBehaviour
     private bool hasFailed = false;
     private bool hasStopped = false;
 
+    [SerializeField] private Gamemanager gameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,6 +49,7 @@ public class Odotaminipeli : MonoBehaviour
         {
             hasStopped = true;
             Debug.Log("PERFECT SCORE!");
+            gameManager.FinishRecipeStep2();
         }
         else
         {
@@ -55,10 +58,12 @@ public class Odotaminipeli : MonoBehaviour
             if (currentValue < perfectValue)
             {
                 Debug.Log("You Lose! Too Early!");
+                gameManager.FinishRecipeStep2();
             }
             else
             {
                 Debug.Log("You Lose! Too Late!");
+                gameManager.FinishRecipeStep2();
             }
         }
         
