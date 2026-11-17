@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MuistiMinipeli : MonoBehaviour
 {
+    private string foodNames;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +13,6 @@ public class MuistiMinipeli : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print.Tostring(foodNames);
     }
 }
