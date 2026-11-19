@@ -29,9 +29,9 @@ public class PainaMinipeli : MonoBehaviour
 
         Color targetColor = Color.Lerp(lowColor, highColor, t);
 
-        sliderBackground.color = Color.Lerp(sliderBackground.color, targetColor, Time.deltaTime * 3f);
+        //sliderBackground.color = Color.Lerp(sliderBackground.color, targetColor, Time.deltaTime * 3f);
 
-        //sliderFill.color = Color.Lerp(sliderFill.color, targetColor, Time.deltaTime * 3f);
+        sliderFill.color = Color.Lerp(sliderFill.color, targetColor, Time.deltaTime * 3f);
 
         GetComponent<Slider>().enabled = true;
 
