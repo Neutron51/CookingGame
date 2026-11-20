@@ -16,6 +16,8 @@ public class PainaMinipeli : MonoBehaviour
     private bool hasSucceeded = false;
     private bool hasFailed = false;
 
+    [SerializeField] private Gamemanager gameManager;
+
     void Start()
     {
         slider.minValue = 0f;
@@ -37,11 +39,13 @@ public class PainaMinipeli : MonoBehaviour
 
         if (hasSucceeded == true)
         {
+            gameManager.FinishRecipeStep3();
             return;
         }
 
         if (hasFailed == true)
         {
+            gameManager.FinishRecipeStep3();
             return;
         }
 

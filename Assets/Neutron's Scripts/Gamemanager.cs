@@ -1,0 +1,86 @@
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class Gamemanager : MonoBehaviour
+{
+    [System.Serializable]
+    public class Recipes
+    {
+        public string RecipeText;
+        public string Recipe;
+        public List<string> CookingSteps;
+    }
+    [SerializeField] private bool InitialInstance = false;
+    [SerializeField] List<GameObject> RecipeSteps = new List<GameObject>();
+    [SerializeField] private GameObject startScreen;
+    [SerializeField] private GameObject recipeScreen;
+    [SerializeField] private Recipes currentRecipe;
+    [SerializeField] private int currentStep;
+    public string currentRecipeText;
+    public List<Recipes> recipes;
+    public void SelectRecipe()
+    {
+        currentRecipe = recipes[Random.Range(0, recipes.Count)];
+        currentRecipeText = currentRecipe.RecipeText;
+        currentStep = 0;
+    }
+    public void NextStep()
+    {
+        currentStep++;
+        InitialInstance = true;
+        PrepareRecipeProcess();
+    }
+    public void PrepareRecipeProcess()
+    {
+        Debug.Log("Start");
+        if (!InitialInstance)
+        {
+            Debug.Log("Prepare recipe process 1");
+            string RecipeName = currentRecipe.Recipe;
+            GameObject RecipeProcessGameObject = GameObject.Find(RecipeName);
+            foreach (Transform child in RecipeProcessGameObject.transform)
+            {
+                RecipeSteps.Add(child.gameObject);
+                Debug.Log("Added child as a step");
+            }
+            RecipeSteps[0].SetActive(true);
+        }
+        else if (currentStep >= RecipeSteps.Count)
+        {
+            Debug.Log("Recipe finished");
+        }
+        else if (currentStep < RecipeSteps.Count)
+        {
+            RecipeSteps[currentStep].SetActive(true);
+        }
+    }
+    public void FinishRecipeStep1()
+    {
+        RecipeSteps[0].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe 1");
+    }
+    public void FinishRecipeStep2()
+    {
+        RecipeSteps[1].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe 2");
+    }
+    public void FinishRecipeStep3()
+    {
+        RecipeSteps[2].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe 3");
+    }
+    public void FinishRecipeStep4()
+    {
+        RecipeSteps[3].transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("Initiate next step in recipe 4");
+    }
+    public void GameLoops()
+    {
+        startScreen.SetActive(true);
+        recipeScreen.SetActive(true);
+        InitialInstance = false;
+        currentRecipe = null;
+        currentRecipeText = null;
+    }
+}
