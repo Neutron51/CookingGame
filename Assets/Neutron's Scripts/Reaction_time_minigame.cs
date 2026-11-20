@@ -122,13 +122,13 @@ public class Reaction_time_minigame : MonoBehaviour
     {
         hasFailed = true;
 
-        Debug.Log("MINIGAME COMPLETED!");
+        Debug.Log("Minigame Complete!");
     }
 
     void LoseGame()
     {
         hasFailed = true;
 
-        Debug.Log("MINIGAME FAILED!");
+        Debug.Log("Minigame Failed!");
     }
 }
