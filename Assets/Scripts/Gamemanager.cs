@@ -7,6 +7,7 @@ public class Gamemanager : MonoBehaviour
     [System.Serializable]
     public class Recipes
     {
+        public bool HasBeenDone = false;
         public string RecipeText;
         public string Recipe;
         public List<string> CookingSteps;
@@ -22,7 +23,12 @@ public class Gamemanager : MonoBehaviour
     public void SelectRecipe()
     {
         currentRecipe = recipes[Random.Range(0, recipes.Count)];
+        while (currentRecipe.HasBeenDone)
+        {
+            currentRecipe = recipes[Random.Range(0, recipes.Count)];
+        }
         currentRecipeText = currentRecipe.RecipeText;
+        currentRecipe.HasBeenDone = true;
         currentStep = 0;
     }
     public void NextStep()
