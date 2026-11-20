@@ -7,7 +7,6 @@ public class PainaMinipeli : MonoBehaviour
     public float moveSpeed = 10f;
 
     public Slider slider;
-    public Image sliderBackground;
     public Image sliderFill;
 
     public Color lowColor = Color.red;
@@ -30,8 +29,6 @@ public class PainaMinipeli : MonoBehaviour
         float t = Mathf.InverseLerp(20f, 80f, slider.value);
 
         Color targetColor = Color.Lerp(lowColor, highColor, t);
-
-        //sliderBackground.color = Color.Lerp(sliderBackground.color, targetColor, Time.deltaTime * 3f);
 
         sliderFill.color = Color.Lerp(sliderFill.color, targetColor, Time.deltaTime * 3f);
 
