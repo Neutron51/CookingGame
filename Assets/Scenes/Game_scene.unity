@@ -2740,7 +2740,7 @@ PrefabInstance:
       objectReference: {fileID: 186486643}
     - target: {fileID: 7138018686938926167, guid: e335dcf2d9b5ec742a68100681b7290c, type: 3}
       propertyPath: maxSuccesses
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7138018686938926167, guid: e335dcf2d9b5ec742a68100681b7290c, type: 3}
       propertyPath: hearts.Array.size
