@@ -80,6 +80,20 @@ public class Odotaminipeli : MonoBehaviour
                 gameManager.FinishRecipeStep2();
             }
         }
-        
+    }
+
+    public void RestartMinigame()
+    {
+        hasSucceeded = false;
+        hasFailed = false;
+        hasStopped = false;
+
+        slider.value = 0.01f;
+
+        sliderFill.color = lowColor;
+
+        slider.enabled = true;
+
+        Debug.Log("Minigame restarted!");
     }
 }

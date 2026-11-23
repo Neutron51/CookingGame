@@ -22,10 +22,16 @@ public class Reaction_time_minigame : MonoBehaviour
     private bool hasSucceeded = false;
     private bool hasFailed = false;
 
+    private Vector3 startingPosition;
+    private Vector2 startingSafeZonePosition;
+
     void Start()
     {
         pointerTransform = GetComponent<RectTransform>();
         currentHearts = hearts.Length;
+
+        startingPosition = pointerTransform.position;
+        startingSafeZonePosition = safeZone.anchoredPosition;
 
         targetPosition = pointB.position;
     }
@@ -130,5 +136,27 @@ public class Reaction_time_minigame : MonoBehaviour
         hasFailed = true;
 
         Debug.Log("Minigame Failed!");
+    }
+
+    public void RestartMinigame()
+    {
+        hasSucceeded = false;
+        hasFailed = false;
+
+        successCount = 0;
+        currentHearts = hearts.Length;
+
+        foreach (GameObject heart in hearts)
+        {
+            heart.SetActive(true);
+        }
+
+        pointerTransform.position = startingPosition;
+
+        targetPosition = pointB.position;
+
+        safeZone.anchoredPosition = startingSafeZonePosition;
+
+        Debug.Log("Minigame restarted!");
     }
 }

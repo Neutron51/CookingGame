@@ -84,4 +84,18 @@ public class PainaMinipeli : MonoBehaviour
             Debug.Log("You Win!");
         }
     }
+
+    public void RestartMinigame()
+    {
+        hasSucceeded = false;
+        hasFailed = false;
+
+        slider.value = 20f;
+
+        sliderFill.color = lowColor;
+
+        slider.enabled = true;
+
+        Debug.Log("Minigame restarted!");
+    }
 }
