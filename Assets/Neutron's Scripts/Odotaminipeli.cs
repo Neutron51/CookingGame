@@ -5,10 +5,16 @@ public class Odotaminipeli : MonoBehaviour
 {
     public float moveSpeed = 10f;
 
+
     public Slider slider;
+    public Image sliderFill;
+
+    public Color lowColor = Color.red;
+    public Color highColor = Color.green;
 
     public float perfectValue = 80f;
     public float perfectTolerance = 100f;
+    public float overTheLine = 100f;
 
     private bool hasSucceeded = false;
     private bool hasFailed = false;
@@ -33,6 +39,14 @@ public class Odotaminipeli : MonoBehaviour
         }
 
         slider.value += moveSpeed * Time.deltaTime;
+
+        float t = Mathf.InverseLerp(0f, 80f, slider.value);
+
+        Color targetColor = Color.Lerp(lowColor, highColor, t);
+
+        sliderFill.color = Color.Lerp(sliderFill.color, targetColor, Time.deltaTime * 3f);
+
+        GetComponent<Slider>().enabled = true;
     }
     public void ButtonTap()
     {
@@ -66,6 +80,20 @@ public class Odotaminipeli : MonoBehaviour
                 gameManager.FinishRecipeStep2();
             }
         }
-        
+    }
+
+    public void RestartMinigame()
+    {
+        hasSucceeded = false;
+        hasFailed = false;
+        hasStopped = false;
+
+        slider.value = 0.01f;
+
+        sliderFill.color = lowColor;
+
+        slider.enabled = true;
+
+        Debug.Log("Minigame restarted!");
     }
 }
