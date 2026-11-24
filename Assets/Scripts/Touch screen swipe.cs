@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Touchscreenswipe : MonoBehaviour, IBeginDragHandler, IEndDragHandler
+public class Touchscreenswipe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private string[] direction = { "left", "right", "down", "up" };
     [SerializeField] private string currentDirection;
@@ -42,11 +42,13 @@ public class Touchscreenswipe : MonoBehaviour, IBeginDragHandler, IEndDragHandle
         startPoint = firstTouchInput;
         Debug.Log("start of drag");
     }
+    public void OnDrag(PointerEventData eventData)
+    {
+    }
     public void OnEndDrag(PointerEventData eventData)
     {
         Vector3 lastTouchInput = eventData.position;
         endPoint = lastTouchInput;
-        DetectDirectionOfSwipeInput();
         currentDirection = DetectDirectionOfSwipeInput();
         Debug.Log(currentDirection);
     }
