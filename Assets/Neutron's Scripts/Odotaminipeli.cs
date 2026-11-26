@@ -33,20 +33,28 @@ public class Odotaminipeli : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hasStopped)
+        if (hasStopped)
         {
             return;
         }
 
         slider.value += moveSpeed * Time.deltaTime;
 
-        float t = Mathf.InverseLerp(0f, 80f, slider.value);
+        float t;
+        Color targetColor;
 
-        Color targetColor = Color.Lerp(lowColor, highColor, t);
+        if (slider.value <= perfectValue)
+        {
+            t = Mathf.InverseLerp(0f, perfectValue, slider.value);
+            targetColor = Color.Lerp(lowColor, highColor, t);
+        }
+        else
+        {
+            t = Mathf.InverseLerp(perfectValue, slider.maxValue, slider.value);
+            targetColor = Color.Lerp(highColor, lowColor, t);
+        }
 
-        sliderFill.color = Color.Lerp(sliderFill.color, targetColor, Time.deltaTime * 3f);
-
-        GetComponent<Slider>().enabled = true;
+        sliderFill.color = Color.Lerp(sliderFill.color,targetColor,Time.deltaTime * 3f);
     }
     public void ButtonTap()
     {
