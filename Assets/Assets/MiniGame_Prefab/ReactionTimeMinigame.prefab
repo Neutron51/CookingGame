@@ -464,7 +464,10 @@ MonoBehaviour:
   pointA: {fileID: 5179398726817644012}
   pointB: {fileID: 8901989801065170447}
   safeZone: {fileID: 2384350244364010979}
-  moveSpeed: 2500
+  moveSpeed: 2100
+  background: {fileID: 0}
+  hearts: []
+  maxSuccesses: 3
 --- !u!1 &6833683239735390513
 GameObject:
   m_ObjectHideFlags: 0

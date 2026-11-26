@@ -7,6 +7,10 @@ public class PainaMinipeli : MonoBehaviour
     public float moveSpeed = 10f;
 
     public Slider slider;
+    public Image sliderFill;
+
+    public Color lowColor = Color.red;
+    public Color highColor = Color.green;
 
     private bool hasSucceeded = false;
     private bool hasFailed = false;
@@ -22,6 +26,14 @@ public class PainaMinipeli : MonoBehaviour
 
     void Update()
     {
+        float t = Mathf.InverseLerp(20f, 80f, slider.value);
+
+        Color targetColor = Color.Lerp(lowColor, highColor, t);
+
+        sliderFill.color = Color.Lerp(sliderFill.color, targetColor, Time.deltaTime * 3f);
+
+        GetComponent<Slider>().enabled = true;
+
         if (hasSucceeded == true)
         {
             gameManager.FinishRecipeStep3();
@@ -71,5 +83,19 @@ public class PainaMinipeli : MonoBehaviour
             hasSucceeded = true;
             Debug.Log("You Win!");
         }
+    }
+
+    public void RestartMinigame()
+    {
+        hasSucceeded = false;
+        hasFailed = false;
+
+        slider.value = 20f;
+
+        sliderFill.color = lowColor;
+
+        slider.enabled = true;
+
+        Debug.Log("Minigame restarted!");
     }
 }
